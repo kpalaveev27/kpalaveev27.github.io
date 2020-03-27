@@ -1,0 +1,49 @@
+body {
+  margin: 0px;
+}
+
+nav {
+  background-color: black;
+  padding: 1vw;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav_bar_contents {
+  font-family: 'Avantgarde', sans-serif;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+.nav_bar_name {
+  margin-top: 0.5em;
+  font-size: 2em;
+}
+
+.nav_bar_button {
+  float: right;
+  vertical-align: bottom;
+
+  /*margin-top + font-size should equal nav_bar_name -> font-size*/
+  margin-top: 2em;
+  /* margin-top: 1em;  */
+  font-size: 1em;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  /* outline: 1px solid white; */
+}
+
+.nav_bar_button:hover {
+  color: gray;
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
