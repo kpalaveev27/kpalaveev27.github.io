@@ -1,12 +1,9 @@
-body {
-  margin: 0px;
-}
-
-nav {
+.nav_bar {
   background-color: black;
-  padding: 1vw;
+  padding: 0.5em;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -20,6 +17,8 @@ nav {
 
 .nav_bar_name {
   margin-top: 0.5em;
+  margin-left: 0.2em;
+
   font-size: 2em;
 }
 
@@ -29,21 +28,53 @@ nav {
 
   /*margin-top + font-size should equal nav_bar_name -> font-size*/
   margin-top: 2em;
-  /* margin-top: 1em;  */
   font-size: 1em;
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
-  /* outline: 1px solid white; */
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 
 .nav_bar_button:hover {
   color: gray;
 }
 
+a.fa:link {
+  color: white;
+  text-decoration: none;
+}
+
+a.fa:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.nav_bar_separator {
+  float: right;
+  vertical-align: bottom;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-top: 4.5em;
+  font-size: 0.5em;
+}
+
 .clearfix:after {
-   content: ".";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.main {
+  margin-top: 5em; /* need this margin because the nav bar is 'fixed' */
+  box-sizing: border-box;
+}
+
+.vimeo_video {
+  margin-top: 3em;
+  display: inline-block;
+}
+
+.spacer {
+  width: 25%;
+  display: inline-block;
 }
