@@ -5,6 +5,7 @@
     <head>
       <link rel="stylesheet" href="css/style.css">
       <link rel="icon stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="js/photography.js"></script>
     </head>
 
     <body>
@@ -21,10 +22,36 @@
       </div>
 
       <div class="main">
-        <div class="spacer_25"></div>
-        <iframe src="https://player.vimeo.com/video/360436930" class="vimeo_video" width="50%" height="338" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="spacer_25"></div>
-        <!-- <p><a href="https://vimeo.com/360436930">Kiril Palaveev Cinematography Reel</a> from <a href="https://vimeo.com/user79082863">Kiril Palaveev</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
+        <div class="spacer_20"></div>
+
+        <div class="photo_display">
+
+          <!-- <div id="photo_1" class="photo_container">
+            <img src="/photos/example_1.png">
+            <div class="transparent_background">
+              <div class="transparent_text">name 1</div>
+            </div>
+          </div> -->
+
+          <script language="JavaScript">
+            // alert();
+            for (var index=0; index < Object.keys(all_photos).length; index++) {
+              var photo_id = "photo" + index;
+              var photo_name = Object.keys(all_photos)[index];
+              var photo_src = all_photos[photo_name];
+              document.write('<div id="' + photo_id + '" class="photo_container">');
+              document.write('<img src="/photos/' + photo_src + '">');
+              document.write('<div class="transparent_background">');
+              document.write('<div class="transparent_text">' + photo_name + '</div>');
+              document.write('</div></div>');
+
+              // document.write("<img id=\""+photo_id+"\" class=\"photo\" src=\"photos/" + all_photos[index] + "\" onmouseover=\"show_title(\'"+photo_id+"\')\">");
+            }
+          </script>
+
+        </div>
+
+        <div class="spacer_20"></div>
       </div>
 
     </body>
