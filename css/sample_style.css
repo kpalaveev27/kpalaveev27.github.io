@@ -6,6 +6,10 @@ body {
   /* background-image: "photos/000359890009.jpg"; */
 }
 
+.set_opaque::after {
+  opacity: 1;
+}
+
 .nav_bar {
   /* background-color: black; */
   padding: 0.5em;
@@ -23,6 +27,7 @@ body {
   text-decoration: none;
   color: white;
   display: inline-block;
+  opacity: 1;
 }
 
 .nav_bar_name {
