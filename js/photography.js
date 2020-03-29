@@ -1,5 +1,5 @@
 var all_photos = {};
-all_photos["name 1"] = "example_1.png";
+all_photos["name 1"] = "C:\Users\kpala\OneDrive\Documents\GitHub\kpalaveev27.github.io\photos\000015430004.jpg";
 all_photos["name 2"] = "example_2.jpeg";
 all_photos["name 3"] = "example_3.jpeg";
 
