@@ -1,7 +1,7 @@
 var all_photos = {};
 all_photos["Across America"] = "000015430004.jpg";
 all_photos["New England"] = "000263810014-2.jpg";
-all_photos["name 3"] = "example_3.jpeg";
+all_photos["Form and Function"] = "000017440027.jpg";
 
 function show_title(photo_id) {
   var cur_photo_element = document.getElementById(photo_id);
