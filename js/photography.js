@@ -1,6 +1,6 @@
 var all_photos = {};
 all_photos["Across America"] = "000015430004.jpg";
-all_photos["name 2"] = "example_2.jpeg";
+all_photos["New England"] = "000263810014-2.jpg";
 all_photos["name 3"] = "example_3.jpeg";
 
 function show_title(photo_id) {
