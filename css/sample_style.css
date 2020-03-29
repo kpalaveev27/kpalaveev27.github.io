@@ -49,7 +49,7 @@ body {
 }
 
 .nav_bar_button:hover {
-  color: gray;
+  color: black;
 }
 
 a.fa:link {
@@ -60,6 +60,14 @@ a.fa:link {
 a.fa:visited {
   color: white;
   text-decoration: none;
+}
+
+a.fa:link:hover {
+  color: black;
+}
+
+a.fa:visited:hover {
+  color: black;
 }
 
 .nav_bar_separator {
