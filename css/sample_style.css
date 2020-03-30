@@ -14,13 +14,18 @@ body {
   text-align: center;
 }
 
-.photo_display {
+.right_side {
   vertical-align: top;
   width: 80%;
   padding: 1%;
   display: inline-block;
   margin: -1%;
   float: right;
+}
+
+.photo_display {
+  margin: 0;
+  min-width: 100%;
 }
 
 .nav_bar_contents {
@@ -32,18 +37,27 @@ body {
   padding-bottom: 1vh; */
 }
 
-a.fa:link {
-  color: black;
+a:link {
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
 }
 
-a.fa:visited {
-  color: black;
+a:visited {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(0, 0, 0, 1);
   text-decoration: none;
 }
 
 .header {
   margin-top: 2vh;
+}
+
+.header a {
+  color: rgba(0, 0, 0, 1);
 }
 
 .clearfix::after {

@@ -40,20 +40,21 @@
           </div>
         </div> -->
       </div>
-
-      <div class="photo_display">
-        <script language="JavaScript">
-          for (var index=0; index < Object.keys(all_photos).length; index++) {
-            var photo_id = "photo" + index;
-            var photo_name = Object.keys(all_photos)[index];
-            var photo_src = all_photos[photo_name];
-            document.write('<div id="' + photo_id + '" class="photo_container">');
-            document.write('<img src="/photos/' + photo_src + '">');
-            document.write('<div class="transparent_background">');
-            document.write('<div class="transparent_text">' + photo_name + '</div>');
-            document.write('</div></div>');
-          }
-        </script>
+      <div class="right_side">
+        <div class="photo_display">
+          <script language="JavaScript">
+            for (var index=0; index < Object.keys(all_photos).length; index++) {
+              var photo_id = "photo" + index;
+              var photo_name = Object.keys(all_photos)[index];
+              var photo_src = all_photos[photo_name];
+              document.write('<div id="' + photo_id + '" class="photo_container">');
+              document.write('<img src="/photos/' + photo_src + '">');
+              document.write('<div class="transparent_background">');
+              document.write('<div class="transparent_text">' + photo_name + '</div>');
+              document.write('</div></div>');
+            }
+          </script>
+        </div>
       </div>
     </body>
 </html>
