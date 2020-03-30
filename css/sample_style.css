@@ -5,7 +5,7 @@ body {
 
 .nav_bar {
   vertical-align: top;
-  width: 36%;
+  width: 16%;
   padding: 1%;
   /* background-color: rgba(0, 0, 0 , 0.1); */
   display: inline-block;
@@ -16,7 +16,7 @@ body {
 
 .photo_display {
   vertical-align: top;
-  width: 60%;
+  width: 80%;
   padding: 1%;
   display: inline-block;
   margin: -1%;
@@ -46,10 +46,6 @@ a.fa:visited {
   margin-top: 2vh;
 }
 
-.nav_bar_button {
-  float: left;
-}
-
 .clearfix::after {
   content: "";
   clear: both;
@@ -58,45 +54,23 @@ a.fa:visited {
 
 .nav_options {
   margin-top: 5vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(50%, 0%);
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  /* text-align: center; */
-  width: 50%;
+  text-align: left;
 }
 
 .social_links {
-  float: none;
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  /* align-self: center; */
-  transform: translate(45%, 0%);
-  margin-left: -1vw;
-  margin-right: 2vw;
-  margin-top: 5vh;
-}
-
-.fa {
-  padding: 1vw;
+  margin-top: 1vh;
 }
 
 #footer {
   position: fixed;
   text-align: center;
   bottom: 0;
-  width: 36%;
+  width: 16%;
   height: 2em;
   /* margin: 0 -5rem; */
   margin-bottom: 1em;
 }
 
-.icon {
-  color: rgba(255, 255, 255, 0.5);
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  font-size: 1.3em;
-}
-
-.icon:hover {
-  color: rgba(255, 255, 255, 1);
+.fa {
+  padding: 1vw;
 }
