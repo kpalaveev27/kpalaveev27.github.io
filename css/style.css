@@ -11,6 +11,8 @@
 
 .center {
   text-align: center;
+  margin-top: 5em; /* need this margin because the nav bar is 'fixed' */
+  box-sizing: border-box;
 }
 
 .nav_bar_contents {
@@ -70,11 +72,6 @@ a.fa:visited {
   clear: both;
 }
 
-.main {
-  margin-top: 5em; /* need this margin because the nav bar is 'fixed' */
-  box-sizing: border-box;
-}
-
 .vimeo_video {
   margin-top: 3em;
   display: inline-block;
@@ -118,21 +115,6 @@ img {
   transition: 0.5s;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-}
-
-.spacer_25 {
-  width: 25%;
-  display: inline-block;
-}
-
-.spacer_20 {
-  width: 20%;
-  display: inline-block;
-}
-
-.spacer_10 {
-  width: 10%;
-  display: inline-block;
 }
 
 

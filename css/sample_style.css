@@ -24,7 +24,6 @@ body {
 }
 
 .photo_display {
-  margin: 0;
   min-width: 100%;
 }
 
@@ -33,8 +32,6 @@ body {
   font-family: 'playfair display', serif;
   /* font-family: 'Avantgarde', sans-serif; */
   text-decoration: none;
-  /* padding-top: 2vh;
-  padding-bottom: 1vh; */
 }
 
 a:link {
@@ -54,7 +51,6 @@ a:hover {
 
 .header {
   margin-top: 2vh;
-  /* margin-bottom: 0.5em; */
 }
 
 .clearfix::after {
