@@ -54,6 +54,7 @@ a:hover {
 
 .header {
   margin-top: 2vh;
+  /* margin-bottom: 0.5em; */
 }
 
 .header a {
@@ -87,4 +88,12 @@ a:hover {
 
 .fa {
   padding: 1vw;
+}
+
+.photo_column {
+  width: 33%;
+  /* margin-left: 1%;
+  margin-right: 1%; */
+  display: inline-block;
+  vertical-align: top;
 }
