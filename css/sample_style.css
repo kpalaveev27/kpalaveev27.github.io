@@ -38,27 +38,23 @@ body {
 }
 
 a:link {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 1);
   text-decoration: none;
 }
 
 a:visited {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 1);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
 }
 
 .header {
   margin-top: 2vh;
   /* margin-bottom: 0.5em; */
-}
-
-.header a {
-  color: rgba(0, 0, 0, 1);
 }
 
 .clearfix::after {
@@ -92,8 +88,6 @@ a:hover {
 
 .photo_column {
   width: 33%;
-  /* margin-left: 1%;
-  margin-right: 1%; */
   display: inline-block;
   vertical-align: top;
 }
