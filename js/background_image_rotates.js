@@ -4,14 +4,14 @@ var images = ["photos/000015430004.jpg", "photos/000015430016.jpg", "photos/0000
 //makes the body change backgrounds every 20 seconds?
 $(function () {
     var i = 0;
-    $("#body").css("background-image", "url(../" + images[i] + ")");
+    $("#homepage_body").css("background-image", "url(../" + images[i] + ")");
     setInterval(function () {
         i++;
         if (i == images.length) {
             i = 0;
         }
         // $("#body").fadeOut(100, function () {
-        $("#body").fadeOut(2000, function () {
+        $("#homepage_body").fadeOut(2000, function () {
             $(this).css("background-image", "url(../" + images[i] + ")");
             $(this).fadeIn(2000);
             // $(this).fadeIn(100);
