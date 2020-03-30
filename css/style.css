@@ -9,6 +9,10 @@
   z-index: 1;
 }
 
+.center {
+  text-align: center;
+}
+
 .nav_bar_contents {
   font-family: 'playfair display', serif;
   /* font-family: 'Avantgarde', sans-serif; */
