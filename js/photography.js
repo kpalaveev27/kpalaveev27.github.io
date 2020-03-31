@@ -1,6 +1,11 @@
 var num_colums = 3; //the number of columns in the all_photos page
 var index = 0;
 
+function is_valid_number(input) {
+  var regex = new RegExp(/^[0-9]+$/i, );
+  return regex.test(input);
+}
+
 var all_titled_photos = {};
 all_titled_photos["Across America"] = "000015430004.jpg";
 all_titled_photos["New England"] = "000471250018.jpg";
@@ -57,7 +62,8 @@ function picture_left() {
   if (index < 0) {
     index = Object.keys(all_photos).length - 1;
   }
-  document.getElementById("photo_display").innerHTML = get_code_for_photo();
+  document.getElementById("photo_display").innerHTML = get_code_for_photo(index);
+  window.location.href = "/photography.html#" + parseInt(index);
 }
 
 function picture_right() {
@@ -65,7 +71,8 @@ function picture_right() {
   if (index >= Object.keys(all_photos).length) {
     index = 0;
   }
-  document.getElementById("photo_display").innerHTML = get_code_for_photo();
+  document.getElementById("photo_display").innerHTML = get_code_for_photo(index);
+  window.location.href = "/photography.html#" + parseInt(index);
 }
 
 function go_to_all_pictures() {
@@ -116,9 +123,10 @@ function go_to_all_pictures() {
 
 
 //THIS CODE DOES NOT HAVE PHOTO TEXT
-function get_code_for_photo() {
-  var photo_id = "photo" + index;
-  var photo_name = Object.keys(all_photos)[index];
+function get_code_for_photo(cur_index) {
+  index = cur_index;
+  var photo_id = "photo" + cur_index;
+  var photo_name = Object.keys(all_photos)[cur_index];
   var photo_src = all_photos[photo_name];
   var toReturn = "";
   toReturn += '<div id="' + photo_id + '" class="photo_container full_page">';
@@ -145,7 +153,7 @@ function make_photo_column(starting_index) {
     var photo_id = "photo" + index;
     var photo_name = Object.keys(cur_photos)[index];
     var photo_src = cur_photos[photo_name];
-    document.write('<div id="' + photo_id + '" class="photo_container">');
+    document.write('<div id="' + photo_id + '" onclick="open_photo(' + index + ')" class="photo_container">');
     document.write('<img src="/photos/' + photo_src + '">');
     document.write('<div class="transparent_background"></div>');
     document.write('</div>');
@@ -153,4 +161,11 @@ function make_photo_column(starting_index) {
   document.write('</div>');
   document.write('</div>');
   document.write(' '); //this puts space between columns
+}
+
+function open_photo(photo_id_number) {
+  // alert(parseInt(photo_id.split("photo")[1]));
+  // index = photo_id_number;
+  window.location.href = "/photography.html#" + photo_id_number;
+  // alert(index);
 }
