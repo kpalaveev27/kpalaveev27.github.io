@@ -63,7 +63,7 @@ function picture_left() {
     index = Object.keys(all_photos).length - 1;
   }
   document.getElementById("photo_display").innerHTML = get_code_for_photo(index);
-  window.location.href = "/photography.html#" + parseInt(index);
+  window.location.href = "/projects.html#" + parseInt(index);
 }
 
 function picture_right() {
@@ -72,7 +72,7 @@ function picture_right() {
     index = 0;
   }
   document.getElementById("photo_display").innerHTML = get_code_for_photo(index);
-  window.location.href = "/photography.html#" + parseInt(index);
+  window.location.href = "/projects.html#" + parseInt(index);
 }
 
 function go_to_all_pictures() {
@@ -132,6 +132,7 @@ function get_code_for_photo(cur_index) {
   toReturn += '<div id="' + photo_id + '" class="photo_container full_page">';
   toReturn += ('<img class="full_page" src="/photos/other/' + photo_src + '">');
   toReturn +=('<div class="transparent_background">');
+  toReturn +=('<div class="transparent_text">' + photo_name + '</div>');
   toReturn +=('<div id="click_left" onclick="picture_left()" class="clickable"></div>');
   toReturn +=('<div id="click_middle" onclick="go_to_all_pictures()" class="clickable"></div>');
   toReturn +=('<div id="click_right" onclick="picture_right()" class="clickable"></div>');
@@ -166,6 +167,6 @@ function make_photo_column(starting_index) {
 function open_photo(photo_id_number) {
   // alert(parseInt(photo_id.split("photo")[1]));
   // index = photo_id_number;
-  window.location.href = "/photography.html#" + photo_id_number;
+  window.location.href = "/projects.html#" + photo_id_number;
   // alert(index);
 }

@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- This is a comment -->
+<html class="no-js" lang="en-US">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+      <script src="js/menu_builder.js"></script>
+      <script>build_header()</script>
+    </head>
+
+    <body>
+      <script>build_menu()</script>
+
+      <div class="right_side">
+        <div id="photo_display" class="photo_display auto_width">
+          <script language="JavaScript">
+            var full_url = window.location.href;
+            if (full_url.includes("#")) {
+              var photo_id_number = full_url.split("#")[1];
+              if (is_valid_number(photo_id_number)) {
+                document.getElementById("photo_display").innerHTML = get_code_for_photo(photo_id_number);
+              } else {
+                alert("Illegal URL");
+              }
+            } else {
+              document.getElementById("photo_display").innerHTML = get_code_for_photo(index);
+            }
+          </script>
+        </div>
+      </div>
+    </body>
+</html>

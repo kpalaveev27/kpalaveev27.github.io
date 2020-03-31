@@ -11,7 +11,7 @@ function build_menu() {
   document.write('<a href="/index.html" class="nav_bar_contents nav_bar_name">KIRIL PALAVEEV</a>');
   document.write('</div>');
   document.write('<div class="nav_options clearfix">');
-  document.write('<a href="/photography.html" class="clearfix nav_bar_contents nav_bar_button">PHOTOGRAPHY</a><br>');
+  document.write('<a href="/projects.html" class="clearfix nav_bar_contents nav_bar_button">PROJECTS</a><br>');
   document.write('<a href="/directing.html" class="clearfix nav_bar_contents nav_bar_button">DIRECTING</a><br>');
   document.write('<a href="/about.html" class="clearfix nav_bar_contents nav_bar_button">ABOUT</a><br>');
   // document.write('<a href="/contact.html" class="clearfix nav_bar_contents nav_bar_button">CONTACT</a><br>');
@@ -35,7 +35,7 @@ function build_menu() {
 //   </div>
 //
 //   <div class="nav_options clearfix">
-//     <a href="/photography.html" class="clearfix nav_bar_contents nav_bar_button">PHOTOGRAPHY</a><br>
+//     <a href="/projects.html" class="clearfix nav_bar_contents nav_bar_button">PROJECTS</a><br>
 //     <a href="/directing.html" class="clearfix nav_bar_contents nav_bar_button">DIRECTING</a><br>
 //     <a href="/about.html" class="clearfix nav_bar_contents nav_bar_button">ABOUT</a><br>
 //     <a href="/contact.html" class="clearfix nav_bar_contents nav_bar_button">CONTACT</a><br>
