@@ -43,6 +43,7 @@ img {
   transition: 0.5s;
   background-color: rgba(0, 0, 0, 0.05);
   color: white;
+  /* z-index: -1; */
 }
 
 .full_page {
@@ -73,6 +74,12 @@ img {
 #click_middle {
   left: 33.33%;
   cursor: n-resize;
+  /* background-color: rgba(0, 255, 0, 1); */
+}
+
+#click_middle_for_project {
+  left: 33.33%;
+  cursor: pointer;
   /* background-color: rgba(0, 255, 0, 1); */
 }
 
