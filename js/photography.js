@@ -2,6 +2,7 @@ var all_photos = {};
 all_photos["Across America"] = "000015430004.jpg";
 all_photos["New England"] = "000471250018.jpg";
 all_photos["Form and Function"] = "000017440027.jpg";
+var index = 0;
 
 var photos_1 = {};
 photos_1["Across America"] = "000015430004.jpg";
@@ -35,10 +36,42 @@ function remove_title(photo_id) {
     var cur_element = cur_hidden_elements[i];
     cur_element.hidden = true;
   }
-
-  // var text_element = cur_element.querySelectorAll(".centered_text")[0];
-  // text_element.hidden = true;
-  // var background_element = cur_element.querySelectorAll(".transparent_background")[0];
-  // background_element.hidden = true;
   alert(text);
+}
+
+function picture_left() {
+  index -= 1;
+  if (index < 0) {
+    index = Object.keys(all_photos).length - 1;
+  }
+  document.getElementById("photo_display").innerHTML = get_code_for_photo();
+}
+
+function picture_right() {
+  index += 1;
+  if (index >= Object.keys(all_photos).length) {
+    index = 0;
+  }
+  document.getElementById("photo_display").innerHTML = get_code_for_photo();
+}
+
+function go_to_all_pictures() {
+  var url_start = window.location.href.split("/")[0];
+  window.location.href = url_start + "/all_photos.html";
+}
+
+function get_code_for_photo() {
+  var photo_id = "photo" + index;
+  var photo_name = Object.keys(all_photos)[index];
+  var photo_src = all_photos[photo_name];
+  var toReturn = "";
+  toReturn += '<div id="' + photo_id + '" class="photo_container full_page">';
+  toReturn += ('<img class="full_page" src="/photos/' + photo_src + '">');
+  toReturn +=('<div class="transparent_background">');
+  toReturn +=('<div class="transparent_text">' + photo_name + '</div>');
+  toReturn +=('<div id="click_left" onclick="picture_left()" class="clickable"></div>');
+  toReturn +=('<div id="click_middle" onclick="go_to_all_pictures()" class="clickable"></div>');
+  toReturn +=('<div id="click_right" onclick="picture_right()" class="clickable"></div>');
+  toReturn +=('</div></div>');
+  return toReturn;
 }
