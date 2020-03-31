@@ -50,6 +50,10 @@ img {
   max-height: 96vh;
 }
 
+.most_page {
+  max-height: 60vh;
+}
+
 .photo_column {
   width: 33%;
   display: inline-block;

@@ -99,3 +99,13 @@ a:hover {
 .fa {
   padding: 1vw;
 }
+
+.page_title {
+  text-align: center;
+  max-height: 20vh;
+  min-height: 20vh;
+}
+
+.info_text {
+  font-size: 1.3em;
+}

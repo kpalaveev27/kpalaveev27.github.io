@@ -11,30 +11,19 @@
       <script>build_menu()</script>
 
       <div class="right_side">
-        <div id="photo_display" class="photo_display auto_width">
-          <script language="JavaScript">
-            if (window.location.href.includes("#")) {
-              var project_and_name = window.location.href.split("#")[1];
-              if (project_and_name.includes("/")) {
-                project_name_array = project_and_name.split("/");
-                var project = replace_spaces(project_name_array[0]);
-                if (is_valid_project(project)) {
-                  var index = project_name_array[1];
-                  if (is_valid_number(index)) {
-                    document.getElementById("photo_display").innerHTML = get_code_for_photo_with_project(project, index);
-                  } else {
-                    alert("Illegal Index");
-                  }
-                } else {
-                  alert("Illegal Project");
-                }
-              }
+        <script>build_project_title(window.location.href)</script>
 
-            } else {
-              alert("Illegal URL");
-            }
-          </script>
+        <div class="smaller_display">
+          <div id="photo_display" class="photo_display auto_width">
+            <script language="JavaScript">
+              var project_and_index = get_project_and_index_from_url(window.location.href);
+              document.getElementById("photo_display").innerHTML = get_code_for_photo_with_project(project_and_index[0], project_and_index[1]);
+            </script>
+          </div>
         </div>
+
+        <script>build_project_info(window.location.href)</script>
+
       </div>
     </body>
 </html>

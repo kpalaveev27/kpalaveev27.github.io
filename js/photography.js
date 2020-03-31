@@ -44,6 +44,11 @@ all_projects["New England"] = ["000471250018.jpg", "000263810014-2.jpg", "000263
 all_projects["Form and Function"] = ["000017440027.jpg", "000017440023.jpg", "000020770019.jpg", "000020770023-3.jpg"];
 all_projects["Portraits"] = ["000359890009-2.jpg", "000020770020.jpg", "000023400016.jpg"];
 
+var info = {};
+info["Across America"] = "Shot over a year and a half, New England is a chronicle of my time in Boston. As a native West Coaster, everything there felt fresh and new to me, and gave me a peek into a part of the country I'd never seen before.";
+info["New England"] = "Across America details scenes and images from a cross-country road trip I took in early 2020. From Miami to New Orleans to Los Angeles, I wanted to capture just how unique each locale is from the next.";
+info["Form and Function"] = "Form and Function is my ongoing study and practice of composition and color. Photography is all about making the most of your frame, and I wanted to really focus on the interplay between stark shapes and negative space here.";
+info["Portraits"] = "Portraits is simply a chronicle of the people in my life. My friends, my family. I look forward to watching this series expand throughout my life as I meet more and more wonderful people.";
 // var all_photos = [];
 // all_photos.push("000015430004.jpg");
 // all_photos.push("000471250018.jpg");
@@ -197,17 +202,12 @@ function get_code_for_photo_with_project(project, cur_index) {
   internal_project_index = cur_index;
 
   var photo_id = "photo" + cur_index;
-  // alert(project);
-  // alert(all_projects[project]);
-  // var photo_name = Object.keys(all_projects)[cur_index];
-  // alert(photo_name);
   var edited_name = remove_spaces(project);
   var orig_name = replace_spaces(edited_name);
-  alert(all_projects[orig_name][internal_project_index]);
   var photo_src = all_projects[orig_name][internal_project_index];
   var toReturn = "";
   toReturn += '<div id="' + photo_id + '" class="photo_container full_page">';
-  toReturn += ('<img class="full_page" src="/photos/for_website/' + orig_name + '/' + photo_src + '">');
+  toReturn += ('<img class="most_page" src="/photos/for_website/' + orig_name + '/' + photo_src + '">');
   toReturn +=('<div class="transparent_background">');
   // toReturn +=('<div class="transparent_text">' + photo_name + '</div>');
   toReturn +=('<div id="click_left" onclick="project_picture_left(\'' + edited_name + '\')" class="clickable"></div>');
@@ -251,4 +251,41 @@ function open_photo(photo_id_number) {
 function go_to_project(project_name) {
   // alert("got here");
   window.location.href = "/photo_project.html#" + project_name + "/0";
+}
+
+function build_project_title(url) {
+  var title = get_project_and_index_from_url(url)[0];
+  document.write('<div class="center_horizontally">');
+  document.write('<h1>' + title + '</h1>');
+  document.write('</div>');
+}
+
+function build_project_info(url) {
+  var title = get_project_and_index_from_url(url)[0];
+  var project_info = info[title];
+  document.write('<div class="center_horizontally info_text">');
+  document.write('<p>' + project_info + '</p>');
+  document.write('</div>');
+}
+
+function get_project_and_index_from_url(url) {
+  if (url.includes("#")) {
+    var project_and_name = url.split("#")[1];
+    if (project_and_name.includes("/")) {
+      project_name_array = project_and_name.split("/");
+      var project = replace_spaces(project_name_array[0]);
+      if (is_valid_project(project)) {
+        var index = project_name_array[1];
+        if (is_valid_number(index)) {
+          return [project, index];
+        } else {
+          alert("Illegal Index");
+        }
+      } else {
+        alert("Illegal Project");
+      }
+    }
+  } else {
+    alert("Illegal URL");
+  }
 }
