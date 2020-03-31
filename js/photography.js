@@ -130,7 +130,7 @@ function get_code_for_photo(cur_index) {
   var photo_src = all_photos[photo_name];
   var toReturn = "";
   toReturn += '<div id="' + photo_id + '" class="photo_container full_page">';
-  toReturn += ('<img class="full_page" src="/photos/' + photo_src + '">');
+  toReturn += ('<img class="full_page" src="/photos/other/' + photo_src + '">');
   toReturn +=('<div class="transparent_background">');
   toReturn +=('<div id="click_left" onclick="picture_left()" class="clickable"></div>');
   toReturn +=('<div id="click_middle" onclick="go_to_all_pictures()" class="clickable"></div>');
@@ -154,7 +154,7 @@ function make_photo_column(starting_index) {
     var photo_name = Object.keys(cur_photos)[index];
     var photo_src = cur_photos[photo_name];
     document.write('<div id="' + photo_id + '" onclick="open_photo(' + index + ')" class="photo_container">');
-    document.write('<img src="/photos/' + photo_src + '">');
+    document.write('<img src="/photos/other/' + photo_src + '">');
     document.write('<div class="transparent_background"></div>');
     document.write('</div>');
   }
