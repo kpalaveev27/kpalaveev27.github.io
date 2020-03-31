@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- This is a comment -->
+<html class="no-js" lang="en-US">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+      <link rel="stylesheet" href="css/original_style.css">
+      <link rel="stylesheet" href="css/photography.css">
+      <link rel="icon stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="js/photography.js"></script>
+    </head>
+
+    <body>
+      <div class="clearfix nav_bar">
+        <a href="/" class="nav_bar_contents nav_bar_name">KIRIL PALAVEEV</a>
+        <span class="clearfix nav_bar_contents nav_bar_button"><a href="https://www.instagram.com/k.palaveev/" class="fa fa-instagram"></a></span>
+        <span class="clearfix nav_bar_contents nav_bar_button"><a href="mailto:kpalaveev27@gmail.com" class="fa fa-envelope"></a></span>
+
+        <a href="/contact.html" class="clearfix nav_bar_contents nav_bar_button">CONTACT</a>
+        <span class="clearfix nav_bar_contents nav_bar_separator"><i class="fa fa-circle "></i></span>
+        <a href="/about.html" class="clearfix nav_bar_contents nav_bar_button">ABOUT</a>
+        <span class="clearfix nav_bar_contents nav_bar_separator"><i class="fa fa-circle "></i></span>
+        <a href="/directing.html" class="clearfix nav_bar_contents nav_bar_button">DIRECTING</a>
+        <span class="clearfix nav_bar_contents nav_bar_separator"><i class="fa fa-circle "></i></span>
+        <a href="/photography.html" class="clearfix nav_bar_contents nav_bar_button">PHOTOGRAPHY</a>
+      </div>
+
+      <div class="center">
+        <div class="photo_display">
+          <script language="JavaScript">
+            for (var index=0; index < Object.keys(all_photos).length; index++) {
+              var photo_id = "photo" + index;
+              var photo_name = Object.keys(all_photos)[index];
+              var photo_src = all_photos[photo_name];
+              document.write('<div id="' + photo_id + '" class="photo_container">');
+              document.write('<img src="/photos/' + photo_src + '">');
+              document.write('<div class="transparent_background">');
+              document.write('<div class="transparent_text">' + photo_name + '</div>');
+              document.write('</div></div>');
+            }
+          </script>
+        </div>
+      </div>
+
+    </body>
+</html>
