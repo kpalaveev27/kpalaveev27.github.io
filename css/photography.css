@@ -1,7 +1,12 @@
 .photo_display {
   display: inline-block;
-  width: 60%;
-  min-width: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.auto_width img {
+  width: auto;
+  max-width: 99%;
 }
 
 img {
@@ -36,7 +41,7 @@ img {
 
 .transparent_background:hover {
   transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.05);
   color: white;
 }
 

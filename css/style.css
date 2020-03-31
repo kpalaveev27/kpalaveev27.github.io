@@ -3,10 +3,13 @@ body {
   margin: 1%;
 }
 
-.center {
+.center_horizontally {
   text-align: center;
-  margin-top: 5em; /* need this margin because the nav bar is 'fixed' */
   box-sizing: border-box;
+}
+
+.center-vertically {
+  margin-top: 20vh;
 }
 
 .nav_bar {
