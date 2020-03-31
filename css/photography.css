@@ -1,6 +1,7 @@
 .photo_display {
   display: inline-block;
   width: 60%;
+  min-width: 100%;
 }
 
 img {
@@ -37,4 +38,41 @@ img {
   transition: 0.5s;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
+}
+
+.full_page {
+  max-height: 96vh;
+}
+
+.photo_column {
+  width: 33%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.clickable {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: left;
+  z-index: 1;
+  height: 96vh;
+  width: 33.33%;
+}
+
+#click_left {
+  left: 0%;
+  cursor: w-resize;
+  /* background-color: rgba(255, 0, 0, 1); */
+}
+
+#click_middle {
+  left: 33.33%;
+  cursor: n-resize;
+  /* background-color: rgba(0, 255, 0, 1); */
+}
+
+#click_right {
+  left: 66.66%;
+  cursor: e-resize;
+  /* background-color: rgba(0, 0, 255, 1); */
 }

@@ -56,8 +56,7 @@ function picture_right() {
 }
 
 function go_to_all_pictures() {
-  var url_start = window.location.href.split("/")[0];
-  window.location.href = url_start + "/all_photos.html";
+  window.location.href = "/all_photos.html";
 }
 
 function get_code_for_photo() {
@@ -74,4 +73,28 @@ function get_code_for_photo() {
   toReturn +=('<div id="click_right" onclick="picture_right()" class="clickable"></div>');
   toReturn +=('</div></div>');
   return toReturn;
+}
+
+function make_photo_columns() {
+  make_photo_column(photos_1);
+  make_photo_column(photos_2);
+  make_photo_column(photos_3);
+}
+
+function make_photo_column(cur_photos) {
+  document.write('<div class="photo_column">');
+  document.write('<div class="photo_display">');
+  for (var index=0; index < Object.keys(cur_photos).length; index++) {
+    var photo_id = "photo" + index;
+    var photo_name = Object.keys(cur_photos)[index];
+    var photo_src = cur_photos[photo_name];
+    document.write('<div id="' + photo_id + '" class="photo_container">');
+    document.write('<img src="/photos/' + photo_src + '">');
+    document.write('<div class="transparent_background">');
+    document.write('<div class="transparent_text">' + photo_name + '</div>');
+    document.write('</div></div>');
+  }
+  document.write('</div>');
+  document.write('</div>');
+  document.write(' '); //this puts space between columns
 }
