@@ -7,8 +7,8 @@ function is_valid_number(input) {
 }
 
 function is_valid_project(input) {
-  for (var i = 0; i < Object.keys(all_titled_photos).length; i++) {
-    if (Object.keys(all_titled_photos)[i] == input) {
+  for (var i = 0; i < Object.keys(all_projects).length; i++) {
+    if (Object.keys(all_projects)[i] == input) {
       return true;
     }
   }
@@ -32,28 +32,28 @@ function get_index_of(element, dictionary) {
   return -1;
 }
 
-var all_titled_photos = {};
-all_titled_photos["Across America"] = "000015430004.jpg";
-all_titled_photos["New England"] = "000471250018.jpg";
-all_titled_photos["Form and Function"] = "000017440027.jpg";
-all_titled_photos["Portraits"] = "000359890009-2.jpg";
+// var all_titled_photos = {};
+// all_titled_photos["Across America"] = "000015430004.jpg";
+// all_titled_photos["New England"] = "000471250018.jpg";
+// all_titled_photos["Form and Function"] = "000017440027.jpg";
+// all_titled_photos["Portraits"] = "000359890009-2.jpg";
 
 var all_projects = {};
 all_projects["Across America"] = ["000015430004.jpg", "000015410026.jpg", "000015420023.jpg", "000015430016.jpg"];
 all_projects["New England"] = ["000471250018.jpg", "000263810014-2.jpg", "000263810027-2.jpg"];
-all_projects["Form and Function"] = ["000017440027.jpg", "000017440023.jpg", "000017440023.jpg", "000020770023-3.jpg"];
+all_projects["Form and Function"] = ["000017440027.jpg", "000017440023.jpg", "000020770019.jpg", "000020770023-3.jpg"];
 all_projects["Portraits"] = ["000359890009-2.jpg", "000020770020.jpg", "000023400016.jpg"];
 
-var all_photos = [];
-all_photos.push("000015430004.jpg");
-all_photos.push("000471250018.jpg");
-all_photos.push("000017440027.jpg");
-all_photos.push("000015440001.jpg");
-all_photos.push("000023400029.jpg");
-all_photos.push("000020770023-4.png");
-all_photos.push("000020770019.jpg");
-all_photos.push("000359880023-2.jpg");
-all_photos.push("74980019-Corrected.png");
+// var all_photos = [];
+// all_photos.push("000015430004.jpg");
+// all_photos.push("000471250018.jpg");
+// all_photos.push("000017440027.jpg");
+// all_photos.push("000015440001.jpg");
+// all_photos.push("000023400029.jpg");
+// all_photos.push("000020770023-4.png");
+// all_photos.push("000020770019.jpg");
+// all_photos.push("000359880023-2.jpg");
+// all_photos.push("74980019-Corrected.png");
 
 // var photos_1 = {};
 // photos_1["Across America"] = "000015430004.jpg";
@@ -90,18 +90,18 @@ function remove_title(photo_id) {
   // alert(text);
 }
 
-function picture_left() {
+function picture_left(project_index) {
   project_index -= 1;
   if (project_index < 0) {
-    project_index = Object.keys(all_titled_photos).length - 1;
+    project_index = Object.keys(all_projects).length - 1;
   }
   document.getElementById("photo_display").innerHTML = get_code_for_photo(project_index);
   window.location.href = "/projects.html#" + parseInt(project_index);
 }
 
-function picture_right() {
+function picture_right(project_index) {
   project_index += 1;
-  if (project_index >= Object.keys(all_titled_photos).length) {
+  if (project_index >= Object.keys(all_projects).length) {
     project_index = 0;
   }
   document.getElementById("photo_display").innerHTML = get_code_for_photo(project_index);
@@ -177,17 +177,17 @@ function go_to_all_pictures() {
 function get_code_for_photo(cur_index) {
   project_index = cur_index;
   var photo_id = "photo" + cur_index;
-  var photo_name = Object.keys(all_titled_photos)[cur_index];
+  var photo_name = Object.keys(all_projects)[cur_index];
   var edited_name = remove_spaces(photo_name);
-  var photo_src = all_titled_photos[photo_name];
+  var photo_src = all_projects[photo_name][0];
   var toReturn = "";
   toReturn += '<div id="' + photo_id + '" class="photo_container full_page">';
   toReturn += ('<img class="full_page" src="/photos/for_website/' + photo_name + "/" + photo_src + '">');
   toReturn +=('<div class="transparent_background">');
   toReturn +=('<div class="transparent_text">' + photo_name + '</div>');
-  toReturn +=('<div id="click_left" onclick="picture_left()" class="clickable"></div>');
+  toReturn +=('<div id="click_left" onclick="picture_left(' + cur_index + ')" class="clickable"></div>');
   toReturn +=('<div id="click_middle_for_project" onclick="go_to_project(\'' + edited_name + '\')" class="clickable"></div>');
-  toReturn +=('<div id="click_right" onclick="picture_right()" class="clickable"></div>');
+  toReturn +=('<div id="click_right" onclick="picture_right(' + cur_index + ')" class="clickable"></div>');
   toReturn +=('</div></div>');
   return toReturn;
 }
