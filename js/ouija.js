@@ -2,6 +2,17 @@ var board_image, planchette_image;
 var planchette_scale_factor = 2;
 var screen_is_frozen = false;
 var popup_window;
+var cursor_is_visible = true;
+
+function toggle_cursor() {
+    if (cursor_is_visible) {
+        cursor_is_visible = false;
+        document.body.style["cursor"] = "none";
+    } else {
+        cursor_is_visible = true;
+        document.body.style["cursor"] = "default";
+    }
+}
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
@@ -36,6 +47,14 @@ function keyPressed() {
     if (key === 'm') { //m for modal
         openModel();
     }
+
+    if (key === '1') { //first modal
+        makeErrorModel();
+    }
+
+    if (key === 'c') { //cursor
+        toggle_cursor();
+    }
 }
 
 function write_window() { //TODO: fill out with whatever is needed
@@ -43,26 +62,35 @@ function write_window() { //TODO: fill out with whatever is needed
     popup_window.document.write("<button>Close Portal</button>");
 }
 
-// for modal
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-function openModel() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks, close the most recent error modal
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    i = modal_counter - 1;
+    if (document.getElementById("errorModal" + i)) {
+        document.body.removeChild(document.getElementById("errorModal" + i));
+        modal_counter -= 1;
+    }
+}
+
+modal_counter = 0;
+multiplier = 20;
+function makeErrorModel() {
+    modal = document.createElement("div");
+    modal.setAttribute("class", "modal");
+    modal.setAttribute("id", "errorModal" + modal_counter);
+    modal_counter += 1;
+    modal_content = document.createElement("div");
+    modal_content.setAttribute("class", "modal-content");
+    close_button = document.createElement("span");
+    close_button.setAttribute("class", "close");
+    close_button.setAttribute("innerHTML", "&times;");
+    new_image = document.createElement("img");
+    new_image.setAttribute("src", "ouija_board/board.jpg");
+
+    new_image.style["padding-left"] += (modal_counter * multiplier) + "px";
+    new_image.style["padding-top"] += (modal_counter * multiplier) + "px";
+
+    modal.appendChild(modal_content);
+    modal_content.appendChild(close_button);
+    modal_content.appendChild(new_image);
+    document.body.insertBefore(modal, document.getElementsByTagName("main")[0]);
 }
