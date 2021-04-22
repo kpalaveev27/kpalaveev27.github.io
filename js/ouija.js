@@ -68,6 +68,9 @@ window.onclick = function(event) {
     if (document.getElementById("errorModal" + i)) {
         document.body.removeChild(document.getElementById("errorModal" + i));
         modal_counter -= 1;
+        if (modal_counter === 0) {
+            screen_is_frozen = false;
+        }
     }
 }
 
@@ -93,4 +96,8 @@ function makeErrorModel() {
     modal_content.appendChild(close_button);
     modal_content.appendChild(new_image);
     document.body.insertBefore(modal, document.getElementsByTagName("main")[0]);
+
+    if (modal_counter > 0) {
+        screen_is_frozen = true;
+    }
 }
