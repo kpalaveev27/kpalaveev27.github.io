@@ -40,8 +40,8 @@ function keyPressed() {
     }
 
     if (key === 'p') { //p for popup
-        popup_window = window.open("", "Portal Pop-up", "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,top=250,left=500,width=500,height=400");
-        write_window();
+        popup_window = window.open("https://kpalaveev27.github.io/countdown.html", "Portal Pop-up", "scrollbars=no,status=no,location=no,toolbar=no,menubar=no,top=250,left=500,width=800,height=500");
+        // write_window();
     }
 
     if (key === 'm') { //m for modal
@@ -57,10 +57,10 @@ function keyPressed() {
     }
 }
 
-function write_window() { //TODO: fill out with whatever is needed
-    popup_window.document.write("<p>This is 'MsgWindow'. I am 500px wide and 400px tall!</p>");
-    popup_window.document.write("<button>Close Portal</button>");
-}
+// function write_window() { //TODO: fill out with whatever is needed
+//     popup_window.document.write("<p>This is 'MsgWindow'. I am 500px wide and 400px tall!</p>");
+//     popup_window.document.write("<button>Close Portal</button>");
+// }
 
 // When the user clicks, close the most recent error modal
 window.onclick = function(event) {
