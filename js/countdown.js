@@ -1,24 +1,34 @@
 //Re-purposed from https://codepen.io/shshaw/pen/vKzoLL
-var clock = new Countdown(99999);
+var current_countdown_value = 99999;
+var clock = new Countdown(current_countdown_value);
 
 function setup() {} //needed to start p5
 
 function keyPressed() {
   // print("key: [" + key + "]");
   if (key === '1') {
-    clock.changeClock(1);
+    current_countdown_value = 1;
+    clock.changeClock(current_countdown_value);
   }
 
   if (key === '2') {
-    clock.changeClock(2);
+    current_countdown_value = 2;
+    clock.changeClock(current_countdown_value);
   }
 
   if (key === '8') {
-    clock.changeClock(99998);
+    current_countdown_value = 99998;
+    clock.changeClock(current_countdown_value);
   }
 
   if (key === '9') {
-    clock.changeClock(99999);
+    current_countdown_value = 99999;
+    clock.changeClock(current_countdown_value);
+  }
+
+  if (key === ' ') {
+    current_countdown_value -= 1;
+    clock.changeClock(current_countdown_value);
   }
 }
 
