@@ -48,8 +48,32 @@ function keyPressed() {
         openModel();
     }
 
-    if (key === '1') { //first modal
-        makeErrorModel();
+    if (key === '1') { //call ended
+        makeModal("paracomm_graphics/Call Ended.png");
+    }
+
+    if (key === '2') { //close portal
+        makeModal("paracomm_graphics/Close Portal.png");
+    }
+
+    if (key === '3') { //generic error
+        makeModal("paracomm_graphics/Generic Error.png");
+    }
+
+    if (key === '4') { //incoming call
+        makeModal("paracomm_graphics/Incoming Call.png");
+    }
+
+    if (key === '5') { //scare achieved
+        makeModal("paracomm_graphics/Scare Achieved.png");
+    }
+
+    if (key === '6') { //scare counter base
+        makeModal("paracomm_graphics/Scare Counter Base.png");
+    }
+
+    if (key === '7') { //scare failed
+        makeModal("paracomm_graphics/Scare Failed Error.png");
     }
 
     if (key === 'c') { //cursor
@@ -62,11 +86,11 @@ function keyPressed() {
 //     popup_window.document.write("<button>Close Portal</button>");
 // }
 
-// When the user clicks, close the most recent error modal
+// When the user clicks, close the most recent modal
 window.onclick = function(event) {
     i = modal_counter - 1;
-    if (document.getElementById("errorModal" + i)) {
-        document.body.removeChild(document.getElementById("errorModal" + i));
+    if (document.getElementById("modal" + i)) {
+        document.body.removeChild(document.getElementById("modal" + i));
         modal_counter -= 1;
         if (modal_counter === 0) {
             screen_is_frozen = false;
@@ -76,10 +100,10 @@ window.onclick = function(event) {
 
 modal_counter = 0;
 multiplier = 20;
-function makeErrorModel() {
+function makeModal(image_src) {
     modal = document.createElement("div");
     modal.setAttribute("class", "modal");
-    modal.setAttribute("id", "errorModal" + modal_counter);
+    modal.setAttribute("id", "modal" + modal_counter);
     modal_counter += 1;
     modal_content = document.createElement("div");
     modal_content.setAttribute("class", "modal-content");
@@ -87,7 +111,8 @@ function makeErrorModel() {
     close_button.setAttribute("class", "close");
     close_button.setAttribute("innerHTML", "&times;");
     new_image = document.createElement("img");
-    new_image.setAttribute("src", "ouija_board/board.jpg");
+    // new_image.setAttribute("src", "ouija_board/board.jpg");
+    new_image.setAttribute("src", image_src);
 
     new_image.style["padding-left"] += (modal_counter * multiplier) + "px";
     new_image.style["padding-top"] += (modal_counter * multiplier) + "px";

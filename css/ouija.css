@@ -24,7 +24,11 @@ body {
 .modal .modal-content {
   margin: 10% auto auto 30%;
   /* 15% from the top and centered */
-  width: 80%;
+}
+
+.modal .modal-content img {
+  max-width: 50%;
   /* Could be more or less, depending on screen size */
+  max-height: 50%;
 }
 /*# sourceMappingURL=ouija.css.map */
