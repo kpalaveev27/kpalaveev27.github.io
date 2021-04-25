@@ -104,6 +104,7 @@ function makeModal(image_src) {
     modal = document.createElement("div");
     modal.setAttribute("class", "modal");
     modal.setAttribute("id", "modal" + modal_counter);
+    // modal.setAttribute("position", "absolute");
     modal_counter += 1;
     modal_content = document.createElement("div");
     modal_content.setAttribute("class", "modal-content");
@@ -121,6 +122,16 @@ function makeModal(image_src) {
     modal_content.appendChild(close_button);
     modal_content.appendChild(new_image);
     document.body.insertBefore(modal, document.getElementsByTagName("main")[0]);
+
+    // if (image_src === "paracomm_graphics/Scare Counter Base.png") {
+    //     iframe = document.createElement("iframe");
+    //     iframe.setAttribute("src", "https://kpalaveev27.github.io/countdown.html");
+    //     iframe.setAttribute("width", "100%");
+    //     iframe.setAttribute("height", "100%");
+    //     iframe.setAttribute("position", "fixed");
+    //     iframe.setAttribute("top", "-200px");
+    //     modal_content.appendChild(iframe);
+    // }
 
     if (modal_counter > 0) {
         screen_is_frozen = true;
