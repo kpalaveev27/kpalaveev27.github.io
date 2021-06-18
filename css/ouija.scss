@@ -17,10 +17,22 @@ body {
   /* Modal Content/Box */
   .modal-content {
     margin: 10% auto auto 30%; /* 15% from the top and centered */
+    display: flex;
 
     img {
       max-width: 50%; /* Could be more or less, depending on screen size */
       max-height: 50%
+    }
+
+    #iframe_container {
+      z-index: 3;
+      position: fixed;
+      margin: 9% auto auto 7.5%; /* 15% from the top and centered */
+
+      iframe {
+        min-height: 80px;
+        max-height: 80px;
+      }
     }
   }
 }

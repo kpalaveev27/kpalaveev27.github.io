@@ -17,7 +17,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #CCC;
+  background: #d6d3ce;
+  margin-top: -10px;
 }
 
 h1 {
@@ -52,7 +53,7 @@ h1 {
   display: block;
   position: relative;
   padding-bottom: 0.72em;
-  font-size: 9vw;
+  font-size: 15vw;
   line-height: 0.95;
 }
 
@@ -66,7 +67,8 @@ h1 {
   background: #222;
   padding: 0.25em 0.25em;
   border-radius: 0.15em 0.15em 0 0;
-  backface-visiblity: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   width: 1em;

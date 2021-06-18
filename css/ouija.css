@@ -24,11 +24,26 @@ body {
 .modal .modal-content {
   margin: 10% auto auto 30%;
   /* 15% from the top and centered */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .modal .modal-content img {
   max-width: 50%;
   /* Could be more or less, depending on screen size */
   max-height: 50%;
+}
+
+.modal .modal-content #iframe_container {
+  z-index: 3;
+  position: fixed;
+  margin: 9% auto auto 7.5%;
+  /* 15% from the top and centered */
+}
+
+.modal .modal-content #iframe_container iframe {
+  min-height: 80px;
+  max-height: 80px;
 }
 /*# sourceMappingURL=ouija.css.map */

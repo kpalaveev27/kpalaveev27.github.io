@@ -1,36 +1,78 @@
 //Re-purposed from https://codepen.io/shshaw/pen/vKzoLL
 var current_countdown_value = 99999;
 var clock = new Countdown(current_countdown_value);
+window.addEventListener('keydown', function (e) { key_down(e); });
 
 function setup() {} //needed to start p5
 
-function keyPressed() {
-  // print("key: [" + key + "]");
-  if (key === '1') {
+// needed for disabling auto-scroll when pressing space
+function key_down(e) { 
+  var e = window.event||e; // Handle browser compatibility
+  var keyID = e.keyCode;
+  //space pressed
+  if (keyID == 32) {
+    current_countdown_value -= 1;
+    clock.changeClock(current_countdown_value);
+      e.preventDefault(); // Prevent the default action
+  }
+
+  offset = 48;
+
+  if (keyID === 1 + offset) {
     current_countdown_value = 1;
     clock.changeClock(current_countdown_value);
   }
 
-  if (key === '2') {
+  if (keyID === 2 + offset) {
     current_countdown_value = 2;
     clock.changeClock(current_countdown_value);
   }
 
-  if (key === '8') {
+  if (keyID === 8 + offset) {
     current_countdown_value = 99998;
     clock.changeClock(current_countdown_value);
   }
 
-  if (key === '9') {
+  if (keyID === 9 + offset) {
     current_countdown_value = 99999;
     clock.changeClock(current_countdown_value);
   }
 
-  if (key === ' ') {
-    current_countdown_value -= 1;
-    clock.changeClock(current_countdown_value);
-  }
+  // if (keyID === ' ') {
+  //   current_countdown_value -= 1;
+  //   clock.changeClock(current_countdown_value);
+  //   e.preventDefault(); // Prevent the default action
+  // }
 }
+
+// function keyPressed() {
+//   // print("key: [" + key + "]");
+//   if (key === '1') {
+//     current_countdown_value = 1;
+//     clock.changeClock(current_countdown_value);
+//   }
+
+//   if (key === '2') {
+//     current_countdown_value = 2;
+//     clock.changeClock(current_countdown_value);
+//   }
+
+//   if (key === '8') {
+//     current_countdown_value = 99998;
+//     clock.changeClock(current_countdown_value);
+//   }
+
+//   if (key === '9') {
+//     current_countdown_value = 99999;
+//     clock.changeClock(current_countdown_value);
+//   }
+
+//   if (key === ' ') {
+//     current_countdown_value -= 1;
+//     clock.changeClock(current_countdown_value);
+//     // e.preventDefault(); // Prevent the default action
+//   }
+// }
 
 function CountdownTracker(value){
 

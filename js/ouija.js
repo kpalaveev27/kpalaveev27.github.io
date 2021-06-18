@@ -17,7 +17,7 @@ function toggle_cursor() {
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
 
-    board_image = loadImage('ouija_board/board.jpg');
+    board_image = loadImage('ouija_board/updated_board.jpg');
     planchette_image = loadImage('ouija_board/planchette.png');
 }
 
@@ -34,7 +34,7 @@ function draw() {
 }
 
 function keyPressed() {
-    print("key: [" + key + "]");
+    // print("key: [" + key + "]");
     if (key === ' ') { //space because it's easy
         screen_is_frozen = !screen_is_frozen;
     }
@@ -123,15 +123,17 @@ function makeModal(image_src) {
     modal_content.appendChild(new_image);
     document.body.insertBefore(modal, document.getElementsByTagName("main")[0]);
 
-    // if (image_src === "paracomm_graphics/Scare Counter Base.png") {
-    //     iframe = document.createElement("iframe");
-    //     iframe.setAttribute("src", "https://kpalaveev27.github.io/countdown.html");
-    //     iframe.setAttribute("width", "100%");
-    //     iframe.setAttribute("height", "100%");
-    //     iframe.setAttribute("position", "fixed");
-    //     iframe.setAttribute("top", "-200px");
-    //     modal_content.appendChild(iframe);
-    // }
+    if (image_src === "paracomm_graphics/Scare Counter Base.png") {
+
+        iframe_container = document.createElement("div");
+        iframe_container.setAttribute("id", "iframe_container");
+
+        iframe = document.createElement("iframe");
+        iframe.setAttribute("src", "/countdown.html");
+
+        iframe_container.appendChild(iframe);
+        modal_content.appendChild(iframe_container);
+    }
 
     if (modal_counter > 0) {
         screen_is_frozen = true;
